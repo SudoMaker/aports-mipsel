@@ -12,7 +12,7 @@ pkgrel=2
 pkgdesc="The Rust Programming Language"
 url="https://www.rust-lang.org/"
 # riscv64 is broken when compiling itself, and has to be bootstrapped again.
-arch="all"
+arch="all !mipsel"
 license="Apache-2.0 AND MIT"
 
 # gcc is needed at runtime just for linking. Someday rustc might invoke

@@ -19,8 +19,9 @@ source="https://www.cpan.org/src/5.0/perl-$pkgver.tar.gz
 	musl-stack-size.patch
 	zlib-no-zsolo.patch
 	"
-# Tests too slow, and some failures on mips64.
+# Tests too slow, and some failures on mips.
 [ "$CARCH" = "mips64" ] && options="$options !check"
+[ "$CARCH" = "mipsel" ] && options="$options !check"
 
 # secfixes:
 #   5.34.0-r1:

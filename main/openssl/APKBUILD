@@ -109,6 +109,7 @@ build() {
 	# when cross building do not enable threads as libatomic is not avaiable
 	if [ "$CBUILD" != "$CHOST" ]; then
 		case $CARCH in
+			mips*) _optflags="$_optflags no-threads";;
 			riscv64) _optflags="$_optflags no-threads";;
 		esac
 	fi

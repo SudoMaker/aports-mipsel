@@ -67,7 +67,9 @@ build() {
 	fi
 
 	cmake -B build -G Ninja -Wno-dev \
-		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_BUILD_TYPE=MinSizeRel \
+		-DLLVM_TARGET_ARCH=mipsel \
+		-DLLVM_DEFAULT_TARGET_TRIPLE=mipsel-alpine-linux-musl \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_MODULE_PATH="$srcdir/cmake-$pkgver.src/Modules" \
 		-DCLANG_BUILT_STANDALONE=ON \

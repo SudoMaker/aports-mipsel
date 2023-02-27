@@ -59,7 +59,7 @@ build() {
 	# See: https://sourceware.org/pipermail/gdb-patches/2022-May/189227.html
 	cd "$builddir"/multiarch
 	case "$CARCH" in
-	arm*|x86) ../configure $_config \
+	mips|mipsel|arm*|x86) ../configure $_config \
 		--disable-sim \
 		--enable-64-bit-bfd \
 		--enable-targets=all ;;

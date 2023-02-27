@@ -110,7 +110,7 @@ EXTRADEPENDS_TARGET="libgcc libstdc++ musl-dev"
 # https://github.com/riscv/riscv-gnu-toolchain/issues/183#issuecomment-253721765
 # The reason gcc itself is needed is because .so is in that package,
 # not in libatomic.
-if [ "$TARGET_ARCH" = "riscv64" ]; then
+if [ "$TARGET_ARCH" = "riscv64" || "$TARGET_ARCH" = "mipsel" ]; then
 	NEEDS_LIBATOMIC="yes"
 fi
 
